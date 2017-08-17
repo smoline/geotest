@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170817173615) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
-    t.geometry "latlon", limit: {:srid=>0, :type=>"st_point"}
+    t.geography "latlon", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
